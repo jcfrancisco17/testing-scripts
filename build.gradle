@@ -10,11 +10,19 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.codehaus.groovy:groovy-all:3.0.5'
+    implementation 'org.codehaus.groovy:groovy-all:3.0.8'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 test {
     useJUnitPlatform()
+}
+
+sourceSets {
+    test {
+        groovy {
+            srcDirs("test/groovy")
+        }
+    }
 }

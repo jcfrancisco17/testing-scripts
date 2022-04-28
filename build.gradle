@@ -19,12 +19,16 @@ dependencies {
     testImplementation "org.testcontainers:postgresql:1.16.3"
 
     testImplementation 'org.postgresql:postgresql:42.3.1'
-    testImplementation 'com.zaxxer:HikariCP:5.0.1'
-
 }
 
 test {
     useJUnitPlatform()
+    testLogging {
+        outputs.upToDateWhen {
+            false
+        }
+        showStandardStreams(true)
+    }
 }
 
 sourceSets {
